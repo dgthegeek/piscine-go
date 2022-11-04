@@ -3,7 +3,7 @@ package piscine
 import "fmt"
 
 func PrintComb2() {
-	for a := 0; a <= 98; a++ {
+    for a := 0; a <= 98; a++ {
 		for b := 1; b <= 99; b++ {
 			if a<b {
 				if a==98 && b==99  {
