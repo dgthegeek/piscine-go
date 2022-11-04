@@ -20,7 +20,7 @@ func PrintComb2() {
 					}
 
 				}
-				
+				i = '0'
 			}
 		}
 	}
