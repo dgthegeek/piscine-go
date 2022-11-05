@@ -13,7 +13,7 @@ func PrintNbr(n int) {
 		}
 		j := (n % 10 * i) + '0'
 		z01.PrintRune(rune(j))
-	} else {
+	}else {
 		z01.PrintRune('0')
 	}
 }
