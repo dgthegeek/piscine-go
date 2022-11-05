@@ -1,15 +1,19 @@
 package piscine
 
-import "github.com/01-edu/z01"
-
-func PrintNbr(n int){
-    if n<0{
-        x := n*(-1)
-        z01.PrintRune('-')
-        z01.PrintRune(x)
-    }else if n>0{
-        fz01.PrintRune(n)
-    }else{
-        fz01.PrintRune('0')
-    }
+func PrintNbr(n int) {
+	i := 1
+	if n < 0 {
+		i = -1
+		z01.PrintRune('-')
+	}
+	if n != 0 {
+		new := (n / 10) * i
+		if f != 0 {
+			PrintNbr(new)
+		}
+		j := (n % 10 * i) + '0'
+		z01.PrintRune(rune(j))
+	} else {
+		z01.PrintRune('0')
+	}
 }
