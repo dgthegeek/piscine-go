@@ -8,6 +8,7 @@ func BasicAtoi(s string) int {
 		if slice[i] < '0' || slice[i] > '9' {
 			return 0
 		} else {
+			transformed *= 10
 			transformed += int(slice[i]) - '0'
 		}
 	}
