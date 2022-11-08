@@ -1,11 +1,16 @@
 package piscine
 
 func IterativeFactorial(nb int) int {
-	if nb == 0 || nb == 1 {
-		return 1
-	} else if nb < 0 {
+	if nb < 0 {
 		return 0
-	} else {
-		return nb * IterativeFactorial(nb-1)
 	}
+	limit := 21
+	factorial := 1
+	for i := 1; i <= nb; i++ {
+		if i > limit {
+			return 0
+		}
+		factorial *= i
+	}
+	return factorial
 }
