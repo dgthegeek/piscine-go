@@ -7,6 +7,7 @@ func Atoi(s string) int {
 	b, e := strconv.Atoi(s)
 	if e == nil{
 		a = b 
+	}
 	if e == nil {
 		a = b
  	}
