@@ -17,8 +17,11 @@ func Atoi(s string) int {
 					sign = -1
 				}
 				// '>1' so i zont get the error 'idex out of range with a certain lenght'
-				if n > 1 && n < i {
-					if slice[i+1] == '-' || slice[i+1] == '+' {
+				if n > 1 {
+					if n == i {
+						return 0
+					}
+					if slice[i] == '-' && slice[i+1] == '-' || slice[i+1] == '+' {
 						return 0
 					}
 				}
@@ -33,6 +36,7 @@ func Atoi(s string) int {
 			transformed += int(slice[i]) - '0'
 		}
 	}
+
 	final := transformed * sign
 	return final
 }
