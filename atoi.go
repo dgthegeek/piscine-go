@@ -11,7 +11,7 @@ func Atoi(s string) int {
 			if slice[i] < '0' {
 				sign = -1
 				if n >= 2 {
-					if slice[i+1] == '-' {
+					if slice[i+1] == '-' || slice[i+1] == '+' {
 						return 0
 					}
 				}
