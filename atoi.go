@@ -5,6 +5,9 @@ func Atoi(s string) int {
 	slice := []rune(s)
 	n := len(s)
 	var transformed int
+	if n == 0 {
+		return 0
+	}
 	for i := 0; i < n; i++ {
 		if slice[i] < '0' || slice[i] > '9' {
 			if slice[i] < '0' {
