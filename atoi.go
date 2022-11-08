@@ -9,7 +9,11 @@ func Atoi(s string) int {
 	for i := 0; i < n; i++ {
 		if slice[i] < '0' || slice[i] > '9' {
 			if slice[i] < '0' {
-				sign = -1
+				if slice[i] == '+' {
+					sign = 1
+				} else {
+					sign = -1
+				}
 				if n >= 2 {
 					if slice[i+1] == '-' || slice[i+1] == '+' {
 						return 0
