@@ -8,9 +8,5 @@ func Atoi(s string) int {
 	if e == nil{
 		a = b 
 	}
-	if e == nil {
-		a = b
- 	}
- 
  	return a
 }
