@@ -22,6 +22,9 @@ func FindNextPrime(nb int) int {
 		}
 
 		for j := i; j < i+1; j++ {
+			if nb < 0 {
+				return 2
+			}
 			if nb > 0 {
 				if nb%i == 0 {
 					nb++
