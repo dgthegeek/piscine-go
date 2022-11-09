@@ -1,4 +1,4 @@
-package pscine
+package piscine
 
 func Prime(nb int) bool {
 	if nb <= 1 {
