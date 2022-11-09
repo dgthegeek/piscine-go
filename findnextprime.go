@@ -1,5 +1,3 @@
-package main
-
 import "fmt"
 
 func Prime(nb int) bool {
@@ -33,9 +31,4 @@ func FindNextPrime(nb int) int {
 		}
 	}
 	return nexprime
-}
-
-func main() {
-	fmt.Println(FindNextPrime(8))
-	fmt.Println(FindNextPrime(5))
 }
