@@ -13,12 +13,17 @@ func Prime(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
+	result := 0
 	if Prime(nb) {
 		return nb
 	} else {
 		n := nb + 1
-		for Prime(n) == false {
-			n++
+		for i := n; i < (n + 10); i++ {
+			if Prime(n) {
+				result += n
+			} else {
+				n++
+			}
 		}
 		return n
 	}
