@@ -1,4 +1,4 @@
-package piscine
+package pscine
 
 func Prime(nb int) bool {
 	if nb <= 1 {
@@ -13,27 +13,13 @@ func Prime(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
-	nexprime := 0
-	for i := nb; i <= nb+1; i++ {
-
-		if Prime(i) {
-			nexprime += i
-			break
+	if Prime(nb) {
+		return nb
+	} else {
+		n := nb + 1
+		for Prime(n) == false {
+			n++
 		}
-
-		for j := i; j < i+1; j++ {
-			if nb <= 1 {
-				return 2
-			}
-			if nb > 0 {
-				if nb%i == 0 {
-					nb++
-				} else {
-					nexprime += i
-					break
-				}
-			}
-		}
+		return n
 	}
-	return nexprime
 }
