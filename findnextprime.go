@@ -1,4 +1,5 @@
-import "fmt"
+import piscine
+
 
 func Prime(nb int) bool {
 	if nb <= 1 {
