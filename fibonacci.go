@@ -5,8 +5,8 @@ func Fibonacci(index int) int {
 		return 0
 	} else if index == 1 || index == 2 {
 		return 1
-	} else if inedx < 0 {
-		retunr - 1
+	} else if index < 0 {
+		return -1
 	} else {
 		return Fibonacci(index-2) + Fibonacci(index-1)
 	}
