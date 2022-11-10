@@ -1,11 +1,10 @@
 package piscine
 
-func IsAlpha(s string) bool {
-	slice := []rune(s)
-	for _, value := range slice {
-		if !(value >= 97 && value <= 122) && !(90 <= value && value >= 65) {
-			return false
+func IsAlpha(str string) bool {
+	for _, value := range str {
+		if value >= 'a' && value <= 'z' || value >= 'A' && value <= 'Z' || value >= '0' && value <= '9' {
+			return true
 		}
 	}
-	return true
+	return false
 }
