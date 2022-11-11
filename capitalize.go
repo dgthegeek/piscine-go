@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package piscine
 
 func alpha(a rune) bool {
 	if (a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z') || (a >= '0' && a <= '9') {
@@ -25,8 +23,4 @@ func Capitalize(s string) string {
 		}
 	}
 	return string(slice)
-}
-
-func main() {
-	fmt.Println(Capitalize("Hello! How are you? How+are+things+4you?"))
 }
