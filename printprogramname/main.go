@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -8,8 +9,9 @@ import (
 
 func main() {
 	name := os.Args[0]
+	fmt.Println(name)
 	for i, r := range name {
-		if i > 0 {
+		if i > 1 {
 			z01.PrintRune(r)
 		}
 	}
