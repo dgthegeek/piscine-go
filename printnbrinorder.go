@@ -1,9 +1,8 @@
-package main
+package piscine
 
 import "github.com/01-edu/z01"
 
-func main() {
-
+func PrintNbrInOrder(n int) {
 	if n == 0 {
 		z01.PrintRune('0')
 		return
@@ -21,11 +20,4 @@ func main() {
 
 		}
 	}
-	z01.PrintRune(tab)
-}
-
-
-	PrintNbrInOrder(321)
-	PrintNbrInOrder(0)
-	PrintNbrInOrder(321)
 }
