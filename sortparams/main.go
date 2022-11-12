@@ -11,10 +11,10 @@ func SortIntegerTable2(table []string) {
 	for i < len(table) {
 		if table[i-1] > table[i] {
 			tmp := table[i]
-
 			table[i] = table[i-1]
 			table[i-1] = tmp
 			i = 1
+
 		} else {
 			i++
 		}
@@ -22,14 +22,14 @@ func SortIntegerTable2(table []string) {
 }
 
 func main() {
-	arg := os.Args[2:]
-	var list []string
-	for i := 0; i < len(arg); i++ {
-		list = append(list, arg[i])
+	arg := os.Args
+	var str []string
+	for i := 1; i < len(arg); i++ {
+		str = append(str, arg[i])
 	}
-	SortIntegerTable2(list)
-	for i := 0; i < len(list); i++ {
-		a := list[i]
+	SortIntegerTable2(str)
+	for i := 0; i < len(str); i++ {
+		a := str[i]
 		for j := 0; j < len(a); j++ {
 			z01.PrintRune(rune(a[j]))
 		}
