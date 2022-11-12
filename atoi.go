@@ -1,4 +1,5 @@
 package piscine
+
 func BasicAtoi(s string) int {
 	slice := []rune(s)
 	n := len(s)
@@ -9,13 +10,13 @@ func BasicAtoi(s string) int {
 			return 0
 		} else {
 
-			if slice[i] == '+' || slice[i] == '-'{
-				if slice[i+1] == '+' || slice[i+1] == '-'{
+			if slice[i] == '+' || slice[i] == '-' {
+				if slice[i+1] == '+' || slice[i+1] == '-' {
 					return 0
-				}else{
-					if slice[i] == '+'{
+				} else {
+					if slice[i] == '+' {
 						sign = 1
-					}else if slice[i] == '-'{
+					} else if slice[i] == '-' {
 						sign = -1
 					}
 				}
