@@ -1,39 +1,29 @@
 package piscine
-
-func Atoi(s string) int {
-	sign := 1
+func BasicAtoi(s string) int {
 	slice := []rune(s)
 	n := len(s)
 	var transformed int
-
+	sign := 1
 	for i := 0; i < n; i++ {
-		if n == 0 {
-			return 0
-		}
 		if slice[i] < '0' || slice[i] > '9' {
-			if slice[i] < '0' {
-				if slice[i] == '+' {
-				} else {
-					sign = -1
-				}
-				// '>1' so i wont get the error 'idex out of range with a certain lenght'
-				if n > 1 {
-					if n == i || slice[i] == '-' && slice[i+1] == '-' || slice[i+1] == '+' {
-						return 0
+			return 0
+		} else {
+
+			if slice[i] == '+' || slice[i] == '-'{
+				if slice[i+1] == '+' || slice[i+1] == '-'{
+					return 0
+				}else{
+					if slice[i] == '+'{
+						sign = 1
+					}else if slice[i] == '-'{
+						sign = -1
 					}
 				}
-				if slice[i] == ' ' {
-					return 0
-				}
-			} else {
-				return 0
 			}
-		} else {
+
 			transformed *= 10
 			transformed += int(slice[i]) - '0'
 		}
 	}
-
-	final := transformed * sign
-	return final
+	return transformed * sign
 }
