@@ -1,8 +1,11 @@
 package main
+
 import (
 	"os"
+
 	"github.com/01-edu/z01"
 )
+
 func SortIntegerTable2(table []string) {
 	i := 1
 	for i < len(table) {
@@ -16,6 +19,7 @@ func SortIntegerTable2(table []string) {
 		}
 	}
 }
+
 func main() {
 	arg := os.Args[2:]
 	var list []string
