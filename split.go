@@ -10,7 +10,6 @@ func Split(s, sep string) []string {
 			s = s[:i] + " " + s[n2+i:]
 			n1 = n1 - n2
 		}
-
 	}
 	return SplitWhiteSpaces(s)
 }
