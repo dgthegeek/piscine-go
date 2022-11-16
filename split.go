@@ -1,6 +1,6 @@
 package piscine
 
-func Split(s, sep string) string {
+func Split(s, sep string) []string {
 	lists := []rune(s)
 	n1 := len(lists)
 	listsep := []rune(sep)
@@ -10,6 +10,7 @@ func Split(s, sep string) string {
 			s = s[:i] + " " + s[n2+i:]
 			n1 = n1 - n2
 		}
+
 	}
 	return SplitWhiteSpaces(s)
 }
