@@ -7,16 +7,15 @@ import (
 )
 
 func main() {
-	inputFile := os.Args[1]
-
-	if len(os.Args) < 1 {
+	if len(os.Args) == 1 {
 		fmt.Println("File name missing")
+	} else if len(os.Args) > 2 {
+		fmt.Println("Too many arguments")
 	} else {
-		file, err := ioutil.ReadFile(inputFile)
+		content, err := ioutil.ReadFile(os.Args[1])
 		if err != nil {
-			fmt.Printf("Could not read the file due to this %s error \n", err)
-			fileContent := string(file)
-			fmt.Println(fileContent)
+			fmt.Printf(err.Error())
 		}
+		fmt.Printf(string(content))
 	}
 }
