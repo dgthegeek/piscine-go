@@ -12,7 +12,6 @@ func printStr(str string) {
 	for _, s := range arrayStr {
 		z01.PrintRune(s)
 	}
-	z01.PrintRune('\n')
 }
 
 func even(nbr int) bool {
