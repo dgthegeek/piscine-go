@@ -1,7 +1,6 @@
 package piscine
 
 func SplitWhiteSpaces(s string) []string {
-
 	var list []string
 	var mot string
 	s = s + " "
