@@ -23,6 +23,5 @@ func main() {
 			z01.PrintRune('\n')
 		}
 		PrintStr(string(content))
-		z01.PrintRune('\n')
 	}
 }
