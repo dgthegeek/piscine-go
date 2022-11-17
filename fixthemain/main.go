@@ -17,7 +17,6 @@ func PrintStr(str string) {
 	for _, s := range slice {
 		z01.PrintRune(s)
 	}
-
 }
 
 func CloseDoor(ptrDoor *Door) {
@@ -36,7 +35,6 @@ func IsDoorClose(ptrDoor *Door) bool {
 }
 
 func OpenDoor(ptrDoor *Door) {
-
 	PrintStr("Door Opening...\n")
 	ptrDoor.State = OPEN
 }
