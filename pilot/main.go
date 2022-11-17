@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	
+
 	student ".."
 )
 
@@ -14,3 +14,4 @@ func main() {
 	donnie.Aircraft = student.AIRCRAFT1
 	fmt.Println(donnie)
 }
+
