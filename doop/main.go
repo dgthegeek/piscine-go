@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 )
 
@@ -44,19 +43,19 @@ func main() {
 		// it prints nothing
 	} else {
 		if args[1] == "%" && nb2 == 0 {
-			fmt.Println("No Modulo by 0")
+			println("No Modulo by 0")
 		} else if args[1] == "/" && nb2 == 0 {
-			fmt.Println("No division by 0")
+			println("No division by 0")
 		} else if args[1] == "+" {
-			fmt.Println(string(nb1 + nb2))
+			println((nb1 + nb2))
 		} else if args[1] == "-" {
-			fmt.Println(string(nb1 - nb2))
+			println((nb1 - nb2))
 		} else if args[1] == "*" {
-			fmt.Println(string(nb1 * nb2))
+			println((nb1 * nb2))
 		} else if args[1] == "/" {
-			fmt.Println(string(nb1 / nb2))
+			println((nb1 / nb2))
 		} else {
-			fmt.Println(string(nb1 % nb2))
+			println((nb1 % nb2))
 		}
 	}
 }
