@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -11,23 +12,33 @@ func main() {
 	signe := args[1]
 	nb2 := Atoi(args[2])
 
+	// errors
+	mod := "No Modulo by 0"
+	Lmod := []rune(mod)
+	div := "No division by 0"
+	Ldiv := []rune(div)
+
 	if len(args) != 3 || signe != "+" && signe != "*" && signe != "-" && signe != "/" && signe != "%" {
 		// it prints nothing
 	} else {
 		if args[1] == "%" && nb2 == 0 {
-			fmt.Print("No Modulo by 0\n")
+			for _, v := range Lmod {
+				z01.PrintRune(v)
+			}
 		} else if args[1] == "/" && nb2 == 0 {
-			fmt.Print("No division by 0\n")
+			for _, v := range Ldiv {
+				z01.PrintRune(v)
+			}
 		} else if args[1] == "+" {
-			fmt.Println(nb1 + nb2)
+			z01.PrintRune((nb1 + nb2) + '0')
 		} else if args[1] == "-" {
-			fmt.Println(nb1 - nb2)
+			z01.PrintRune((nb1 - nb2) + '0')
 		} else if args[1] == "*" {
-			fmt.Println(nb1 * nb2)
+			z01.PrintRune((nb1 * nb2) + '0')
 		} else if args[1] == "/" {
-			fmt.Println(nb1 / nb2)
+			z01.PrintRune((nb1 / nb2) + '0')
 		} else {
-			fmt.Println(nb1 % nb2)
+			z01.PrintRune((nb1 % nb2) + '0')
 		}
 	}
 }
