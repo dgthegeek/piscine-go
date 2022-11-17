@@ -38,24 +38,23 @@ func main() {
 	nb2 := Atoi(args[2])
 
 	// errors
-
 	if len(args) != 3 || signe != "+" && signe != "*" && signe != "-" && signe != "/" && signe != "%" {
-		// it prints nothing
+		return
 	} else {
 		if args[1] == "%" && nb2 == 0 {
 			println("No Modulo by 0")
 		} else if args[1] == "/" && nb2 == 0 {
 			println("No division by 0")
 		} else if args[1] == "+" {
-			println((nb1 + nb2))
+			println(nb1 + nb2)
 		} else if args[1] == "-" {
-			println((nb1 - nb2))
+			println(nb1 - nb2)
 		} else if args[1] == "*" {
-			println((nb1 * nb2))
+			println(nb1 * nb2)
 		} else if args[1] == "/" {
-			println((nb1 / nb2))
+			println(nb1 / nb2)
 		} else {
-			println((nb1 % nb2))
+			println(nb1 % nb2)
 		}
 	}
 }
