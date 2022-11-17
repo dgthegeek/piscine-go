@@ -1,9 +1,10 @@
-package main 
+package main
 
 import "github.com/01-edu/z01"
 
 const (
 	CLOSE = 0
+
 	OPEN = 1
 )
 
@@ -16,6 +17,7 @@ func PrintStr(str string) {
 	for _, s := range slice {
 		z01.PrintRune(s)
 	}
+
 }
 
 func CloseDoor(ptrDoor *Door) {
@@ -33,7 +35,8 @@ func IsDoorClose(ptrDoor *Door) bool {
 	return ptrDoor.State == CLOSE
 }
 
-func OpenDoor(ptrDoor *Door){
+func OpenDoor(ptrDoor *Door) {
+
 	PrintStr("Door Opening...\n")
 	ptrDoor.State = OPEN
 }
