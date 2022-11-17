@@ -20,7 +20,7 @@ func PrintStr(str string) {
 }
 
 func CloseDoor(ptrDoor *Door) {
-	PrintStr("Door closing...\n")
+	PrintStr("Door Closing...\n")
 	ptrDoor.State = CLOSE
 }
 
