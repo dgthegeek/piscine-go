@@ -6,6 +6,13 @@ import (
 	student ".."
 )
 
+type Pilot struct {
+	Name     string
+	Life     float32
+	Age      int
+	Aircraft int
+}
+
 func main() {
 	var donnie student.Pilot
 	donnie.Name = "Donnie"
