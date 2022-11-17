@@ -13,4 +13,3 @@ func main() {
 	donnie.Aircraft = student.AIRCRAFT1
 	fmt.Println(donnie)
 }
-const AIRCRAFT1 = 1
