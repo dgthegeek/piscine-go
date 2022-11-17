@@ -18,9 +18,11 @@ func main() {
 	for i := 1; i < len(os.Args); i++ {
 		content, err := ioutil.ReadFile(os.Args[i])
 		if err != nil {
-			mes := "ERROR: " + err.Error() + "no such file or directory"
+			mes := "ERROR: " + err.Error()
+			exit := "exit status 1"
 			PrintStr(mes)
 			z01.PrintRune('\n')
+			PrintStr(exit)
 		}
 		PrintStr(string(content))
 	}
