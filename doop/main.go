@@ -6,9 +6,9 @@ import (
 
 func ff() string {
 	args := os.Args[1:]
-	nb1 := Atoi(args[0])
+	nb1 := atoi(args[0])
 	signe := args[1]
-	nb2 := Atoi(args[2])
+	nb2 := atoi(args[2])
 
 	// errors
 
