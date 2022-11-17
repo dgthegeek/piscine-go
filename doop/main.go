@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 )
 
@@ -31,7 +32,8 @@ func Atoi(s string) int {
 	return a
 }
 
-func ff(args []string) string {
+func main() {
+	args := os.Args[1:]
 	nb1 := Atoi(args[0])
 	signe := args[1]
 	nb2 := Atoi(args[2])
@@ -42,25 +44,19 @@ func ff(args []string) string {
 		// it prints nothing
 	} else {
 		if args[1] == "%" && nb2 == 0 {
-			return "No Modulo by 0"
+			fmt.Println("No Modulo by 0")
 		} else if args[1] == "/" && nb2 == 0 {
-			return "No division by 0"
+			fmt.Println("No division by 0")
 		} else if args[1] == "+" {
-			return PrintNbr(nb1 + nb2)
+			fmt.Println(string(nb1 + nb2))
 		} else if args[1] == "-" {
-			return PrintNbr(nb1 - nb2)
+			fmt.Println(string(nb1 - nb2))
 		} else if args[1] == "*" {
-			return PrintNbr(nb1 * nb2)
+			fmt.Println(string(nb1 * nb2))
 		} else if args[1] == "/" {
-			return PrintNbr(nb1 / nb2)
+			fmt.Println(string(nb1 / nb2))
 		} else {
-			return PrintNbr(nb1 % nb2)
+			fmt.Println(string(nb1 % nb2))
 		}
 	}
-	return "0"
-}
-
-func main() {
-	args := os.Args[1:]
-	ff(args)
 }
