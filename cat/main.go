@@ -1,20 +1,45 @@
 package main
 
 import (
-	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
+func reader(fileName string) string {
+	content, err := ioutil.ReadFile(fileName)
+	if err != nil {
+		return "error"
+	}
+	return string(content)
+}
+
+func print(str string) {
+	for _, val := range str {
+		z01.PrintRune(val)
+	}
+}
+
 func main() {
-	n := len(os.Args)
-	for i := 1; i < n; i++ {
-		content, err := ioutil.ReadFile(os.Args[i])
-		if err != nil {
-			fmt.Println(err.Error())
+	args := os.Args[1:]
+
+	end := false
+	for _, fileName := range args {
+		if _, err := os.Stat(fileName); err != nil {
+			print("ERROR: open " + fileName + ": no such file or directory\n")
+			os.Exit(1)
 			return
 		}
-		fmt.Println(string(content))
-		fmt.Println()
+		print(reader(fileName))
+		end = true
+
+	}
+	if !end {
+		reader := io.TeeReader(os.Stdin, os.Stdout)
+		ioutil.ReadAll(reader)
+		os.Stdin.Close()
+		os.Stdout.Close()
 	}
 }
