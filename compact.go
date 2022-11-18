@@ -1,11 +1,16 @@
 package piscine
 
-func Compact(ptr *[]string, leng int) int {
-	count := 0
-	for i := 0; i < leng; i++ {
-		if (*ptr)[i] != " " {
-			count++
+func Compact(ptr *[]string) int {
+
+	res := 0
+	var arr []string
+	for _, v := range *ptr {
+
+		if v != "" {
+			arr = append(arr, v)
+			res++
 		}
 	}
-	return count
+	*ptr = arr
+	return res
 }
