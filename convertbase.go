@@ -1,7 +1,6 @@
 package piscine
 
 func ConvertBase(nbr, baseForm, baseTo string) string {
-
 	result := ""
 	my_map := map[rune]int{}
 
