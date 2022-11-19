@@ -49,6 +49,7 @@ func main() {
 		}
 	}
 }
+
 func intToByte(num int) []byte {
 	var lists []byte
 	negNum := false
@@ -71,6 +72,7 @@ func intToByte(num int) []byte {
 	lists = append(lists, "\n"[0])
 	return lists
 }
+
 func strToByte(s string) {
 	var lists []byte
 	for i := range s {
@@ -78,24 +80,28 @@ func strToByte(s string) {
 	}
 	os.Stdout.Write(lists)
 }
+
 func findNumber(s string, s2 string) (int, bool) {
 	if IsNumeric(s) {
 		return Atoi(s2), true
 	}
 	return 0, false
 }
+
 func overFlow(num int) bool {
 	if num < 9223372036854775807 && -9223372036854775807 < num {
 		return true
 	}
 	return false
 }
+
 func IsOperator(s string) bool {
 	if s == "+" || s == "-" || s == "/" || s == "%" || s == "*" {
 		return true
 	}
 	return false
 }
+
 func IsNumeric(s string) bool {
 	for _, symbol := range s {
 		if symbol >= 48 && symbol <= 57 {
@@ -106,6 +112,7 @@ func IsNumeric(s string) bool {
 	}
 	return true
 }
+
 func Atoi(s string) int {
 	newInt := 0
 	var number int
