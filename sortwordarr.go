@@ -2,7 +2,6 @@ package piscine
 
 func SortWordArr(array []string) {
 	quickSrot2(array, 0, len(array)-1)
-
 }
 
 func quickSrot2(table []string, beg int, end int) {
