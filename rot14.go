@@ -3,11 +3,9 @@ package piscine
 func Rot14(str string) string {
 	arrayRune := []rune(str)
 	var result string
-
-	for i := 0; i < lent(arrayRune); i++ {				 	//quando é treze e +13 de A a M
-															// e -13 de n a z
-		if arrayRune[i] >= 'a' && arrayRune[i] <= 'z' { 	//como é base 14 subtrai 12 quando é
-															//maior que m e soma 14 quando menor
+	for i := 0; i < lent(arrayRune); i++ {				 															
+		if arrayRune[i] >= 'a' && arrayRune[i] <= 'z' { 	
+															
 
 			if arrayRune[i] >= 'm' {
 				arrayRune[i] -= 12
