@@ -6,8 +6,8 @@ func ListLast(l *List) interface{} {
 	}
 
 	element := l.Head
-	for element != nil {
-		element = l.Head.Next
+	for element.Next != nil {
+		element = element.Next
 	}
 
 	return element.Data
