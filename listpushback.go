@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package piscine
 
 type NodeL struct {
 	Data interface{}
@@ -22,18 +20,5 @@ func ListPushBack(l *List, data interface{}) {
 	} else {
 		l.Tail.Next = n
 		l.Tail = l.Tail.Next
-	}
-}
-
-func main() {
-	link := &List{}
-
-	ListPushBack(link, "Hello")
-	ListPushBack(link, "man")
-	ListPushBack(link, "how are you")
-
-	for link.Head != nil {
-		fmt.Println(link.Head.Data)
-		link.Head = link.Head.Next
 	}
 }
