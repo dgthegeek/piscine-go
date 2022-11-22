@@ -46,16 +46,3 @@ func PrintNbrBase(s int, t string) {
 		z01.PrintRune(c)
 	}
 }
-
-func main() {
-	PrintNbrBase(125, "0123456789")
-	z01.PrintRune('\n')
-	PrintNbrBase(-125, "01")
-	z01.PrintRune('\n')
-	PrintNbrBase(125, "0123456789ABCDEF")
-	z01.PrintRune('\n')
-	PrintNbrBase(-125, "choumi")
-	z01.PrintRune('\n')
-	PrintNbrBase(125, "aa")
-	z01.PrintRune('\n')
-}
