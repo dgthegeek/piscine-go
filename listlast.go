@@ -7,7 +7,7 @@ func ListLast(l *List) interface{} {
 
 	element := l.Head
 	for element != nil {
-		element = element.Next
+		element = l.Head.Next
 	}
 
 	return element.Data
