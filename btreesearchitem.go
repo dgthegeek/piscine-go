@@ -5,7 +5,7 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 		return root
 	}
 	if elem < root.Data {
-		return BTreeSearchItem(root.Left, elem)
+		return BTreeSearchItem(root.Left.Parent, elem)
 	}
-	return BTreeSearchItem(root.Right, elem)
+	return BTreeSearchItem(root.Right.Parent, elem)
 }
