@@ -2,7 +2,7 @@ package piscine
 
 func applyLevel(root *TreeNode, level int, f func(...interface{}) (int, error)) {
 	if root == nil {
-		return 
+		return
 	}
 	if level == 0 {
 		f(root.Data)
