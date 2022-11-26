@@ -1,58 +1,34 @@
-package piscine
+package bakar
 
 import "github.com/01-edu/z01"
 
-const N = 8
-
-var position = [N]int{}
-
-func PrintNbr99(n int) {
-	t := 1
-	if n < 0 {
-		t = -1
-		z01.PrintRune('-')
-	}
-	if n != 0 {
-		f := (n / 10) * t
-		if f != 0 {
-			PrintNbr99(f)
-		}
-		k := (n % 10 * t) + '0'
-		z01.PrintRune(rune(k))
-	} else {
-		z01.PrintRune('0')
-	}
-}
-
-func talivre(queennumber, rowposition int) bool {
-	for i := 0; i < queennumber; i++ {
-		other_row_pos := position[i]
-
-		if other_row_pos == rowposition ||
-			other_row_pos == rowposition-(queennumber-i) ||
-			other_row_pos == rowposition+(queennumber-i) {
+func isSafe(a, b int, pos [8]int) bool {
+	for i := 0; i < a; i++ {
+		t := pos[i]
+		if t==b||t==b-(a-i)||t==b+(a-i){
 			return false
 		}
 	}
 	return true
 }
 
-func resolverpuzzle(k int) {
-	if k == N {
-		for i := 0; i < N; i++ {
-			PrintNbr99(position[i] + 1)
+func solve(nb int, pos [8]int) {
+	if nb == 8 {
+		for i := 0; i < 8; i++ {
+			z01.PrintRune(rune(pos[i]+49))
 		}
-		z01.PrintRune('\n')
+		z01.PrintRune(10)
 	} else {
-		for i := 0; i < N; i++ {
-			if talivre(k, i) {
-				position[k] = i
-				resolverpuzzle(k + 1)
+		for i := 0; i < 8; i++ {
+			if isSafe(nb, i, pos) {
+				pos[nb] = i
+				solve(nb+1, pos)
 			}
 		}
 	}
 }
 
 func EightQueens() {
-	resolverpuzzle(0)
+	pos := [8]int{0, 0, 0, 0, 0, 0, 0}
+	solve(0, pos)
 }
