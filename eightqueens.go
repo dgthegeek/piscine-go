@@ -22,7 +22,6 @@ func PrintNbr99(n int) {
 	} else {
 		z01.PrintRune('0')
 	}
-
 }
 
 func talivre(queennumber, rowposition int) bool {
@@ -39,7 +38,6 @@ func talivre(queennumber, rowposition int) bool {
 }
 
 func resolverpuzzle(k int) {
-
 	if k == N {
 		for i := 0; i < N; i++ {
 			PrintNbr99(position[i] + 1)
@@ -54,6 +52,7 @@ func resolverpuzzle(k int) {
 		}
 	}
 }
+
 func EightQueens() {
 	resolverpuzzle(0)
 }
