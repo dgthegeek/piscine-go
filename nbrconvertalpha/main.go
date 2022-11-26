@@ -7,27 +7,39 @@ import (
 )
 
 func main() {
-	arguments := os.Args[1:]
-	caps := false
-	for _, v := range arguments {
-		if v == "--upper" {
-			caps = true
-		}
-	}
-	for _, arg := range arguments {
-		numv := 0
-		for _, v := range arg {
-			numv = numv*10 + int(v-'0')
-		}
-		if numv >= 1 && numv <= 26 {
-			if caps == false {
-				z01.PrintRune(rune(numv + 96))
-			} else {
-				z01.PrintRune(rune(numv + 64))
+	args := os.Args[1:]
+	if len(args) != 0 {
+		str := "abcdefghijklmnopqrstuvwxyz"
+		var params []int
+		for _, value := range args {
+			result := 0
+			for k := 0; k < len(value); k++ {
+				if byte(value[k]) >= 48 && byte(value[k]) <= 57 {
+					result = result*10 + int(value[k]-'0')
+				}
 			}
-		} else {
-			z01.PrintRune(' ')
+			params = append(params, result)
 		}
+		b := false
+		if args[0] != "--upper" {
+			b = true
+		}
+		for _, value := range params {
+			if value >= 1 && value <= 26 {
+				if args[0] == "--upper" {
+					z01.PrintRune(rune(str[value-1] - 32))
+				} else {
+					z01.PrintRune(rune(str[value-1]))
+				}
+			} else {
+				if b {
+					z01.PrintRune(' ')
+				}
+				if args[0] == "--upper" {
+					b = true
+				}
+			}
+		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 }
